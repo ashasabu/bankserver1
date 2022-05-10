@@ -180,7 +180,26 @@ return {
   }
 
 
-
+const deleteAcc=(acno)=>{
+  return db.User.deleteOne({acno})
+  .then(user=>{
+    if(!user){
+      return  {
+        statusCode:401,
+        status:false,
+        message:"Operation Invalid"
+      }
+    }
+    else{
+      return  {
+        statusCode:200,
+        status:true,
+        message:"Account Number"+acno+"deleted successfully"
+    
+      }
+    }
+  })
+}
    
    //export
    module.exports={
@@ -188,5 +207,6 @@ return {
     login,
     deposit,
     withdraw,
-    transaction
+    transaction,
+    deleteAcc
    }

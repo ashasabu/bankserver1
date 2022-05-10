@@ -101,3 +101,10 @@ app.post('/login',(req,res)=>{
         res.status(result.statusCode).json(result)
  })  })
 
+ app.delete('/onDelete/:acno',jwtMiddleware,(req,res)=>{
+    dataService.deleteAcc(req.params.acno)
+    .then(result=>{
+        res.status(result.statusCode).json(result)
+    
+      })
+  })
