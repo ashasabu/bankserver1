@@ -14,7 +14,7 @@ const app=express()
 //use cores in server app
 app.use(cors({
 
-    origin:'http://localhost:4200'
+    origin:'http://localhost:61716'
 }))
 
 //to parse json data
